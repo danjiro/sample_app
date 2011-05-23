@@ -10,6 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20110523043349) do
 
   create_table "microposts", :force => true do |t|
@@ -20,6 +21,9 @@ ActiveRecord::Schema.define(:version => 20110523043349) do
   end
 
   add_index "microposts", ["user_id"], :name => "index_microposts_on_user_id"
+=======
+ActiveRecord::Schema.define(:version => 20110522102749) do
+>>>>>>> origin/master
 
   create_table "users", :force => true do |t|
     t.string   "name"

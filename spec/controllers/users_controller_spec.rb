@@ -35,6 +35,31 @@ describe UsersController do
         get :index
         response.should have_selector("title", :content => "All users")
       end
+<<<<<<< HEAD
+=======
+
+  it "should have an element for each user" do
+        get :index
+        @users[0..2].each do |user|
+          response.should have_selector("li", :content => user.name)
+        end
+  end
+  
+  it "should paginate users" do
+        get :index
+        response.should have_selector("div.pagination")
+        response.should have_selector("span.disabled", :content => "Previous")
+        response.should have_selector("a", :href => "/users?page=2",
+                                           :content => "2")
+        response.should have_selector("a", :href => "/users?page=2",
+                                           :content => "Next")
+  end
+  
+    end
+  end
+  
+    describe "GET 'show'" do
+>>>>>>> origin/master
 
   it "should have an element for each user" do
         get :index
@@ -320,8 +345,11 @@ describe UsersController do
         delete :destroy, :id => @user
         response.should redirect_to(root_path)
       end
+<<<<<<< HEAD
       
 
+=======
+>>>>>>> origin/master
     end
 
     describe "as an admin user" do
@@ -330,7 +358,10 @@ describe UsersController do
         admin = Factory(:user, :email => "admin@example.com", :admin => true)
         test_sign_in(admin)
       end
+<<<<<<< HEAD
       
+=======
+>>>>>>> origin/master
 
       it "should destroy the user" do
         lambda do
