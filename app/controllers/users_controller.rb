@@ -9,7 +9,6 @@ class UsersController < ApplicationController
     end
     
      def destroy
-<<<<<<< HEAD
        if User.find(params[:id]).admin?
          flash[:error] = "Cannot delete Admins!"
              redirect_to users_path
@@ -18,11 +17,6 @@ class UsersController < ApplicationController
     flash[:success] = "User destroyed."
     redirect_to users_path
        end 
-=======
-    User.find(params[:id]).destroy
-    flash[:success] = "User destroyed."
-    redirect_to users_path
->>>>>>> origin/master
   end
     
 
@@ -80,12 +74,6 @@ class UsersController < ApplicationController
 
 private
 
-<<<<<<< HEAD
-=======
-def authenticate
-  deny_access unless signed_in?
-end
->>>>>>> origin/master
 
 def correct_user
   @user = User.find(params[:id])
