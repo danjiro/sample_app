@@ -35,8 +35,7 @@ describe UsersController do
         get :index
         response.should have_selector("title", :content => "All users")
       end
-<<<<<<< HEAD
-=======
+
 
   it "should have an element for each user" do
         get :index
@@ -59,7 +58,7 @@ describe UsersController do
   end
   
     describe "GET 'show'" do
->>>>>>> origin/master
+
 
   it "should have an element for each user" do
         get :index
@@ -133,25 +132,8 @@ describe UsersController do
     end
   end
   
-    it "should have a name field" do
-      get :new
-      response.should have_selector("input[name='user[name]'][type='text']")
-    end
-    
-    it "should have an email field" do
-      get :new
-      response.should have_selector("input[name='user[email]'][type='text']")
-    end
 
-    it "should have a password field" do
-      get :new
-      response.should have_selector("input[name='user[password]'][type='password']")
-    end
 
-    it "should have a password confirmation field" do
-      get :new
-      response.should have_selector("input[name='user[password_confirmation]'][type='password']")
-    end
     
     describe "POST 'create'" do
 
@@ -345,11 +327,8 @@ describe UsersController do
         delete :destroy, :id => @user
         response.should redirect_to(root_path)
       end
-<<<<<<< HEAD
-      
 
-=======
->>>>>>> origin/master
+    
     end
 
     describe "as an admin user" do
@@ -358,10 +337,7 @@ describe UsersController do
         admin = Factory(:user, :email => "admin@example.com", :admin => true)
         test_sign_in(admin)
       end
-<<<<<<< HEAD
-      
-=======
->>>>>>> origin/master
+
 
       it "should destroy the user" do
         lambda do
@@ -376,6 +352,4 @@ describe UsersController do
     end
     end
     
-    
-end
 

@@ -1,3 +1,21 @@
+<li>
+  <p>
+    <%= micropost.content %>
+  </p>
+  <h3>
+    Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+    <% if current_user?(micropost.user) %>
+    <%= link_to "delete", micropost, :method => :delete,
+                                     :confirm => "You sure?",
+                                     :title => "Delete this post?"
+                                      %>
+                                   <% end %>
+  </h3>
+</li>
+
+
+
+<!-- old style
 <tr>
   <td class="micropost">
     <span class="content"><%= micropost.content %></span>
@@ -14,3 +32,5 @@
                                   
   </td>
 </tr>
+
+-->

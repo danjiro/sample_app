@@ -1,6 +1,11 @@
 class MicropostsController < ApplicationController
   before_filter :authenticate, :only => [:create, :destroy]
   before_filter :authorized_user, :only => :destroy
+  
+    def index
+    @title = "All microposts"
+    @microposts = Micropost.where("user_id = ?", params[:user_id])
+    end
 
   def create
     @micropost = current_user.microposts.build(params[:micropost])
@@ -15,8 +20,8 @@ class MicropostsController < ApplicationController
 
   def destroy
     @micropost.destroy
-    flash[:success] = "Your Micropost was deleted :("
-    redirect_back_or root_path
+    flash[:success] = "Your Micropost was deleted!"
+    redirect_back_or current_user
   end
   
   private
